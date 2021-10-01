@@ -5,7 +5,7 @@ defmodule BurgerProject.Brands.Burger.Manager do
 
   def create(params) do
     %Burger{}
-    |> Brands.changeset(params)
+    |> Burger.changeset(params)
     |> Repo.insert()
   end
 end
