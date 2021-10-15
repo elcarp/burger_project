@@ -5,7 +5,7 @@ defmodule BurgerProject.Brands do
     to: Brands.Burger.Manager,
     as: :get
 
-  defdelegate create_building(params),
+  defdelegate create_burger(params),
     to: Brands.Burger.Manager,
     as: :create
 end
