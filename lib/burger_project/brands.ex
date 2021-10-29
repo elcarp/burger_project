@@ -8,4 +8,8 @@ defmodule BurgerProject.Brands do
   defdelegate create_burger(params),
     to: Brands.Burger.Manager,
     as: :create
+
+  defdelegate create_location(location, params),
+    to: Brands.Locations.Manager,
+    as: :create
 end
