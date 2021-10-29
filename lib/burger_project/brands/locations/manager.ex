@@ -1,11 +1,15 @@
 defmodule BurgerProject.Brands.Locations.Manager do
-  alias BurgerProject.{Brands, Repo}
+  alias BurgerProject.Repo
 
-  alias Brands.Locations
+  alias BurgerProject.Brands.{
+    Burger,
+    Locations
+  }
 
-  def create(params) do
-    %Locations{}
-    |> Locations.changeset(params)
+  def create(%Burger{} = burger, attrs) do
+    # %Room{building_id: building_id}
+    Ecto.build_assoc(burger, :locations)
+    |> Locations.changeset(attrs)
     |> Repo.insert()
   end
 end
