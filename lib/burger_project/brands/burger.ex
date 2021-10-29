@@ -2,8 +2,12 @@ defmodule BurgerProject.Brands.Burger do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias BurgerProject.Brands.Burger
+
   schema "burgers" do
     field :name, :string
+
+    has_many :burgers, Burger
 
     timestamps()
   end
